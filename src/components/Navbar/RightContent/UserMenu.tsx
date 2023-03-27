@@ -37,7 +37,11 @@ const UserMenu: React.FC<UserMenuProps> = ({ user }) => {
       <MenuButton
         padding={"0px 6px"}
         cursor={"pointer"}
-        _hover={{ outline: "1px solid" }}
+        borderRadius={2}
+        _hover={{
+          outline: "1px solid",
+          outlineColor: colorMode === "dark" ? "gray.500" : "gray.200",
+        }}
       >
         <Flex align={"center"}>
           <Flex align={"center"}>

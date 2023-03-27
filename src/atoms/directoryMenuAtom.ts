@@ -19,7 +19,7 @@ export const defaultMenuItem: DirectoryMenuItem = {
   displayText: "Home",
   link: "/",
   icon: TiHome,
-  iconColor: "black",
+  iconColor: "gray.600",
 };
 
 export const defaultMenuState: DirectoryMenuState = {

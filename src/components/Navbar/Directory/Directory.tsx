@@ -8,21 +8,28 @@ import {
   MenuButton,
   MenuList,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import React from "react";
 import { TiHome } from "react-icons/ti";
 import Communities from "./Communities";
 
 const UserMenu: React.FC = () => {
+  const { colorMode } = useColorMode();
   const { directoryState, toggleMenuOpen } = useDirectory();
   return (
     <Menu isOpen={directoryState.isOpen}>
       <MenuButton
-        padding={"0px 6px"}
+        padding={"0px 4px"}
         cursor={"pointer"}
         mr={2}
         ml={{ base: 0, md: 2 }}
-        _hover={{ outline: "1px solid", color: "gray.200" }}
+        borderRadius={2}
+        _hover={{
+          outline: "1px solid",
+          outlineColor: colorMode === "dark" ? "gray.500" : "gray.200",
+          color: "gray.500",
+        }}
         onClick={toggleMenuOpen}
       >
         <Flex

@@ -38,7 +38,7 @@ const Communities: React.FC<CommunitiesProps> = () => {
           />
         ))}
       </Box>
-      <Box mt={3} mb={4}>
+      <Box mt={3} mb={0}>
         <Text
           pl={3}
           mb={1}
@@ -46,8 +46,9 @@ const Communities: React.FC<CommunitiesProps> = () => {
           fontWeight={500}
           color={"gray.500"}
           letterSpacing={1}
+          textTransform={"uppercase"}
         >
-          MY COMMUNITIES
+          my communities
         </Text>
         <MenuItem
           width={"100%"}

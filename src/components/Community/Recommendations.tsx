@@ -8,6 +8,7 @@ import {
   SkeletonCircle,
   Stack,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import Link from "next/link";
@@ -20,6 +21,7 @@ import useCommunityData from "../../hooks/useCommunityData";
 type RecommendationsProps = {};
 
 const Recommendations: React.FC<RecommendationsProps> = () => {
+  const { colorMode } = useColorMode();
   const [communities, setCommunities] = useState<Community[]>([]);
   const [loading, setLoading] = useState(false);
   const { communityStateValue, onJoinOrLeaveCommunity } = useCommunityData();
@@ -53,11 +55,11 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
   return (
     <Flex
       direction="column"
-      bg="white"
+      bg={colorMode === "dark" ? "gray.700" : "white"}
       borderRadius={4}
       cursor="pointer"
       border="1px solid"
-      borderColor="gray.300"
+      borderColor={colorMode === "dark" ? "gray.600" : "gray.300"}
     >
       <Flex
         align="flex-end"
@@ -103,7 +105,7 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
                     align="center"
                     fontSize="10pt"
                     borderBottom="1px solid"
-                    borderColor="gray.200"
+                    borderColor={colorMode === 'dark' ? "gray.600" :"gray.200"}
                     p="10px 12px"
                     fontWeight={600}
                   >
